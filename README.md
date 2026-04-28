@@ -1,6 +1,13 @@
 ## VGA Multi-Functional Controller with Audio & SSD Display
 This project is a comprehensive SoC (System on Chip) prototype developed in VHDL for FPGA platforms. It implements a high-performance VGA controller capable of real-time geometric rendering, dynamic audio generation, and synchronized 7-segment display (SSD) feedback.
-Core FeaturesThe system features four distinct operating modes, selectable via hardware switches (sw(1:0)):1. Chessboard Mode (00)Generates a classic 8x8 checkerboard pattern.Renders the text "TABLA SAH" (Chessboard) across the 8-digit Seven Segment Display.2. Dynamic Geometric Shapes Mode (01)A high-autonomy mode where users can manipulate shapes on the screen using the FPGA directional buttons (btn). The shape type is toggled via the fg input:Square: Implemented via coordinate boundary detection.Circle: Calculated using the Euclidean distance formula: $dist = dx^2 + dy^2$.Triangle: Rendered through custom slope-intercept comparison logic.Rhombus: Based on the Manhattan distance algorithm: $|dx| + |dy| \leq 50$.Random Colorization: Integrated with a RandColorGenerator module to change colors on the fly using the center button.3. Drawing & Grid Mode (10)Displays a 32x32 pixel reference grid.Features a mobile cursor for precision positioning or "drawing" simulation.SSD Feedback: Displays "DESEN" (Draw).4. Alternative Bit-Pattern Mode (11)Generates a complex background pattern by leveraging the bit-logic of the horizontal and vertical counters.
+Core FeaturesThe system features four distinct operating modes, selectable via hardware switches 
+(sw(1:0)):1. Chessboard Mode (00)Generates a classic 8x8 checkerboard pattern.Renders the text "TABLA SAH" (Chessboard) across the 8-digit Seven Segment Display.
+2. Dynamic Geometric Shapes Mode (01)A high-autonomy mode where users can manipulate shapes on the screen using the FPGA directional buttons (btn). 
+The shape type is toggled via the fg input:Square: Implemented via coordinate boundary detection.Circle: Calculated using the Euclidean distance formula: $dist = dx^2 + dy^2$.
+Triangle: Rendered through custom slope-intercept comparison logic.Rhombus: Based on the Manhattan distance algorithm: $|dx| + |dy| \leq 50$.
+Random Colorization: Integrated with a RandColorGenerator module to change colors on the fly using the center button.
+3. Drawing & Grid Mode (10)Displays a 32x32 pixel reference grid.Features a mobile cursor for precision positioning or "drawing" simulation.SSD Feedback: Displays "DESEN" (Draw).
+4. Alternative Bit-Pattern Mode (11)Generates a complex background pattern by leveraging the bit-logic of the horizontal and vertical counters.
 System Architecture
 The project follows a modular structural modeling approach:
 
